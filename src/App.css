@@ -12,3 +12,9 @@
 body {
   background: #e6e6f3;
 }
+
+footer {
+  padding: 5px;
+  margin: 0 auto;
+  text-align: center;
+}
