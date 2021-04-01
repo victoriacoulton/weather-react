@@ -1,9 +1,14 @@
 .App {
-  text-align: center;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 85%;
+  margin: 0 auto;
+  margin-top: 30px;
 }
 
-.App-header {
-  background-color: #282c34;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body {
+  background: #e6e6f3;
 }

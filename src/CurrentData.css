@@ -1,0 +1,57 @@
+.fa-map-marker-alt {
+  font-size: 35px;
+  padding: 20px;
+}
+
+.unit-C,
+.unit-F {
+  border: none;
+  background: none;
+  color: blue;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.currentData {
+  margin: 0px 0px 20px 0px;
+  padding: 15px 0px 15px 0px;
+}
+
+.tempBox {
+  text-align: right;
+  font-size: 60px;
+  padding: 23px 0px 23px 0px;
+}
+
+.swtich-units {
+  font-size: 24px;
+  position: relative;
+  top: -28px;
+  left: -10px;
+}
+
+.active,
+.active:hover {
+  cursor: default;
+  color: black;
+}
+
+.current-icon {
+  text: center;
+  display: block;
+  margin: 0 auto;
+}
+
+.description {
+  text-transform: capitalize;
+  text-align: center;
+  color: #8484ad;
+  display: block;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+  margin: 23px 0px 0px 0px;
+  padding: 20px 0px;
+}
