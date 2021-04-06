@@ -5,7 +5,7 @@ import SearchBar from "./SearchBar";
 import DateTime from "./DateTime"
 import CurrentData from "./CurrentData"
 
-function App() {
+export default function App() {
   return (
     <div className="App">
           <SearchBar />
@@ -15,4 +15,4 @@ function App() {
   );
 }
 
-export default App;
+
