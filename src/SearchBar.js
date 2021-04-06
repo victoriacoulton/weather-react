@@ -10,7 +10,7 @@ export default function Search() {
             type="search"
             id="search-for-city"
             placeholder="Search for a new city"
-            autocomplete="off"
+            autoComplete="off"
           />
           <button type="submit" id="search-button" className="btn btn-primary">
             Search

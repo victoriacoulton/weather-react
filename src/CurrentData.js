@@ -21,7 +21,7 @@ export default function CurrentData() {
         </div>
 
         <div className="col-3">
-          <img src="" alt="condition-icon" className="current-icon" />
+          <img src="/" alt="condition-icon" className="current-icon" />
           <p className="description">{weatherData.conditions}</p>
         </div>
 
