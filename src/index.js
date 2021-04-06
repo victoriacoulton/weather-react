@@ -8,9 +8,6 @@ import "./App.css";
 ReactDOM.render(
   <React.StrictMode>
     <App />
-     <footer>
-       <a href="https://github.com/victoriacoulton/weather-react">Open Source Code</a> by Victoria Coulton
-    </footer>
   </React.StrictMode>,
   document.getElementById('root')
 );
