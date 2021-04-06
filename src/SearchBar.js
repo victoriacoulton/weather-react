@@ -11,6 +11,7 @@ export default function Search() {
             id="search-for-city"
             placeholder="Search for a new city"
             autoComplete="off"
+            autoFocus="on"
           />
           <button type="submit" id="search-button" className="btn btn-primary">
             Search
