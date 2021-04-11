@@ -1,76 +1,68 @@
 import React, { useState } from "react";
 import "./CurrentData.css";
 import axios from "axios";
+import WeatherInfo from "./WeatherInfo";
 
 
-export default function CurrentData() {
+export default function CurrentData(props) {
+  const [weatherData, setWeatherData] = useState({ready: false})  
+  const [city, setCity] = useState(props.city)
   function updateDetails(response) {
-    console.log(response.data)
-
-    setCity(response.data.name)
-    setReady(true)
-
     setWeatherData({
-    temperature: (response.data.main.temp),
-    conditions: (response.data.weather[0].description),
-    wind: (response.data.wind.speed),
-    humidity: (response.data.main.humidity),
-    icon: (response.data.weather[0].icon)
+    ready: true,
+    city: response.data.name,
+    date: new Date(response.data.dt * 1000),
+
+    temperature: response.data.main.temp,
+    conditions: response.data.weather[0].description,
+    wind: response.data.wind.speed,
+    humidity: response.data.main.humidity,
+    iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   })
   }
- 
-  const [city, setCity] = useState(null)  
-  const [weatherData, setWeatherData] = useState({ready: false})  
 
-  
+  function search(){
+    const apiKey = "43e5f0554c92ed76972a39cf70fe0115";
+    let units = "metric";
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+    axios.get(url).then(updateDetails);
+  }
 
-  if (weatherData.ready) {
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  function handleCityChange(event){
+    setCity(event.target.value)
+  }
+
+
+  if (weatherData.ready === true) {
     return (
-      <div className="currentData">
-        <section className="DateTime">
-          <i className="fas fa-map-marker-alt"></i>
-          <h1>{city}</h1>
-          <p>
-            <span>date</span>
-            <br />
-            <span>time</span>
-          </p>
-        </section>
+      <div className = "Weather">
         <div className="row justify-content-md-center">
-          <div className="col-3 tempBox">
-            <span> {Math.round(weatherData.temperature)} </span>
-            <span className="swtich-units">
-              <button className="unit-C active">℃</button>|
-              <button className="unit-F">℉</button>
-            </span>
+        <form className="SearchBar" onSubmit={handleSubmit}>
+          <div className="input-group mb-3">
+            <input
+              type="search" placeholder="Search for a new city"
+              autoComplete="off" autoFocus="on"
+              onChange={handleCityChange}
+            />
+            <button type="submit" className="btn btn-primary">
+              Search
+            </button>
+            <button type="submit" className="btn btn-outline-primary">
+              Current Location
+            </button>
           </div>
-
-          <div className="col-3">
-            <img src={weatherData.icon} alt={weatherData.description} className="current-icon" />
-            <p className="description">{weatherData.conditions}</p>
-          </div>
-
-          <div className="col-3">
-            <ul className="current-conditions">
-              <li>
-                <strong>Humidity: </strong>
-                {Math.round(weatherData.humidity)}%
-              </li>
-              <li>
-                <strong>Wind Speed: </strong>
-                {Math.round(weatherData.wind)}km/h
-              </li>
-            </ul>
-          </div>
-        </div>
+        </form>
+      </div>
+    <WeatherInfo data={weatherData}/>
     </div>
-     )
+  )
      } else { 
-      const apiKey = "f896fd4c5067a8dda6aeb8f9d2ddd111";
-      let city = "Sydney";
-      let units = "metric";
-      let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-      axios.get(url).then(updateDetails);
+      search()
       return ("Loading...")
   }
 }
