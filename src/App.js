@@ -7,7 +7,7 @@ export default function App() {
   return (
     <div className ="container">
       <div className="App">
-            <CurrentData city="Sydney"/>
+            <CurrentData city="London"/>
       </div>
         <footer>
            <a href="https://github.com/victoriacoulton/weather-react">Open Source Code</a> by Victoria Coulton

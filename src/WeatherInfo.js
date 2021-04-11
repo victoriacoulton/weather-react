@@ -2,8 +2,7 @@ import React from "react";
 import FormatDate from "./FormatDate"
 import FormatTime from "./FormatTime"
 import WeatherIcon from "./WeatherIcon"
-
-
+import DisplayTemp from "./DisplayTemp"
 
 export default function WeatherInfo(props) {
   return (
@@ -23,11 +22,7 @@ export default function WeatherInfo(props) {
         </section>
         <div className="row justify-content-md-center">
           <div className="col-3 tempBox">
-            <span> {Math.round(props.data.temperature)} </span>
-            <span className="swtich-units">
-              <button className="unit-C active">℃</button>|
-              <button className="unit-F">℉</button>
-            </span>
+            <DisplayTemp celsius = {(props.data.temperature)}/>
           </div>
 
           <div className="col-3">
