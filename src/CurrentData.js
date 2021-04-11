@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./CurrentData.css";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
+import ReactAnimatedWeather from 'react-animated-weather'; 
 
 
 export default function CurrentData(props) {
@@ -17,7 +18,7 @@ export default function CurrentData(props) {
     conditions: response.data.weather[0].description,
     wind: response.data.wind.speed,
     humidity: response.data.main.humidity,
-    iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    icon: `${response.data.weather[0].icon}`
   })
   }
 

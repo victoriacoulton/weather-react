@@ -45,12 +45,6 @@
   color: black;
 }
 
-.current-icon {
-  text-align: center;
-  display: block;
-  margin: 0 auto;
-}
-
 .description {
   text-transform: capitalize;
   text-align: center;
