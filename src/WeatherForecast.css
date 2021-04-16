@@ -1,0 +1,19 @@
+.Weather-Forecast {
+  text-align: center;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.unit {
+  font-size: 11px;
+  position: relative;
+  top: -4px;
+}
+
+.forecast-temp-max {
+  font-weight: bold;
+}
+
+.forecast-temp-min {
+  opacity: 60%;
+}

@@ -2,16 +2,18 @@ import React, { useState } from "react";
 import "./CurrentData.css";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 
 export default function CurrentData(props) {
+  
   const [weatherData, setWeatherData] = useState({ready: false})  
   const [city, setCity] = useState(props.city)
   function updateDetails(response) {
     setWeatherData({
     ready: true,
+    coords: response.data.coord,
     city: response.data.name,
     date: new Date(response.data.dt * 1000),
-
     temperature: response.data.main.temp,
     conditions: response.data.weather[0].description,
     wind: response.data.wind.speed,
@@ -58,6 +60,7 @@ export default function CurrentData(props) {
         </form>
       </div>
     <WeatherInfo data={weatherData}/>
+    <WeatherForecast data={weatherData.coords}/>
     </div>
   )
      } else { 
