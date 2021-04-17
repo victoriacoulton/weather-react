@@ -52,10 +52,7 @@ export default function CurrentData(props) {
             />
             <button type="submit" className="btn btn-primary">
               Search
-            </button>
-            <button type="submit" className="btn btn-outline-primary">
-              Current Location
-            </button>
+            </button>             
           </div>
         </form>
       </div>
