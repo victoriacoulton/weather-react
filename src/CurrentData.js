@@ -5,20 +5,20 @@ import WeatherInfo from "./WeatherInfo";
 import WeatherForecast from "./WeatherForecast";
 
 export default function CurrentData(props) {
-  
   const [weatherData, setWeatherData] = useState({ready: false})  
   const [city, setCity] = useState(props.city)
   function updateDetails(response) {
     setWeatherData({
-    ready: true,
-    coords: response.data.coord,
-    city: response.data.name,
-    date: new Date(response.data.dt * 1000),
-    temperature: response.data.main.temp,
-    conditions: response.data.weather[0].description,
-    wind: response.data.wind.speed,
-    humidity: response.data.main.humidity,
-    icon: `${response.data.weather[0].icon}`
+      ready: true,
+      coords: response.data.coord,
+      city: response.data.name,
+      date: new Date(response.data.dt * 1000),
+      temperature: response.data.main.temp,
+      conditions: response.data.weather[0].description,
+      feels: response.data.main.feels_like,
+      wind: response.data.wind.speed,
+      humidity: response.data.main.humidity,
+      icon: `${response.data.weather[0].icon}`
   })
   }
 

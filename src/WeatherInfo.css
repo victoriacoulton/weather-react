@@ -5,3 +5,18 @@
   margin: 0 auto;
   margin-top: 10px;
 }
+
+h1 {
+  margin-top: 18px;
+  margin-bottom: 10px;
+}
+
+.feels-like-units {
+  font-size: 11px;
+  position: relative;
+  top: -4px;
+}
+
+p {
+  color: rgb(87, 88, 92);
+}

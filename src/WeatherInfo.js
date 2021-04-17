@@ -1,14 +1,16 @@
 import React from "react"; 
+import "./WeatherInfo.css"
 import FormatDate from "./FormatDate"
 import FormatTime from "./FormatTime"
 import WeatherIcon from "./WeatherIcon"
 import DisplayTemp from "./DisplayTemp"
+import { FaMapMarkerAlt } from 'react-icons/fa';
 
 export default function WeatherInfo(props) {
   return (
       <div className="currentData">
         <section className="DateTime">
-          <i className="fas fa-map-marker-alt"></i>
+          <FaMapMarkerAlt  size = "40"/>
           <h1>{props.data.city}</h1>
           <p>
             <span>
@@ -34,6 +36,10 @@ export default function WeatherInfo(props) {
 
           <div className="col-3">
             <ul className="current-conditions">
+              <li>
+                <strong>Feels like: </strong>
+                {Math.round(props.data.feels)}<span className="feels-like-units">℃</span>
+              </li>              
               <li>
                 <strong>Humidity: </strong>
                 {Math.round(props.data.humidity)}%
