@@ -1,14 +1,8 @@
 .Weather-Forecast {
   text-align: center;
-  margin: 0 auto;
+  margin: 0px auto;
   padding: 5px;
   max-width: 80%;
-}
-
-.unit {
-  font-size: 11px;
-  position: relative;
-  top: -3px;
 }
 
 .forecast-temp-max {
@@ -21,4 +15,14 @@
 
 .forecast-day {
   padding: 8px;
+}
+
+.unit {
+  font-size: 11px;
+  position: relative;
+  top: -3px;
+}
+
+.forecast {
+  margin-bottom: 25px;
 }
