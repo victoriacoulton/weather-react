@@ -2,13 +2,13 @@
   text-align: center;
   margin: 0 auto;
   padding: 5px;
-  max-width: 90%;
+  max-width: 80%;
 }
 
 .unit {
   font-size: 11px;
   position: relative;
-  top: -4px;
+  top: -3px;
 }
 
 .forecast-temp-max {
@@ -17,4 +17,8 @@
 
 .forecast-temp-min {
   color: #8484ad;
+}
+
+.forecast-day {
+  padding: 8px;
 }
