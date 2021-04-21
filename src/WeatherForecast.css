@@ -5,24 +5,6 @@
   max-width: 80%;
 }
 
-.forecast-temp-max {
-  font-weight: bold;
-}
-
-.forecast-temp-min {
-  color: #8484ad;
-}
-
-.forecast-day {
-  padding: 8px;
-}
-
-.unit {
-  font-size: 11px;
-  position: relative;
-  top: -3px;
-}
-
 .forecast {
   margin-bottom: 25px;
 }
