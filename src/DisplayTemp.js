@@ -4,7 +4,7 @@ import "./DisplayTemp.css";
 export default function DisplayTemp(props) { 
   return (
     <div>
-      <span> {Math.round(props.celsius)} </span>
+      <span > {Math.round(props.celsius)} </span>
       <span className="units"> ℃ </span>
     </div>  
   );

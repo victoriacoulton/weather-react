@@ -22,6 +22,8 @@ export default function WeatherInfo(props) {
             </span>
           </p>
         </section>
+
+
         <div className="row justify-content-md-center">
           <div className="col-3 tempBox">
             <DisplayTemp celsius = {(props.data.temperature)}/>
@@ -37,16 +39,16 @@ export default function WeatherInfo(props) {
           <div className="col-3">
             <ul className="current-conditions">
               <li>
-                <strong>Feels like: </strong>
-                {Math.round(props.data.feels)}<span className="feels-like-units">℃</span>
+                <span>Feels like: </span>
+                <strong className ="data">{Math.round(props.data.feels)}<span className="feels-like-units">℃</span></strong>
               </li>              
               <li>
-                <strong>Humidity: </strong>
-                {Math.round(props.data.humidity)}%
+                <span>Humidity: </span>
+                <strong className ="data">{Math.round(props.data.humidity)}%</strong>
               </li>
               <li>
-                <strong>Wind Speed: </strong>
-                {Math.round(props.data.wind)} km/h
+                <span>Wind Speed: </span>
+                <strong className ="data">{Math.round(props.data.wind)} km/h </strong>
               </li>
             </ul>
           </div>
